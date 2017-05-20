@@ -5,7 +5,7 @@ from .models import Nota, Area
 
 class AdminNota (admin.ModelAdmin):
     list_display = ['id', 'area', 'estado',
-                    'fecha_recibido', 'fecha_confirmado']
+                    'fecha_recibido', 'fecha_confirmado','descripcion']
     form = NotaModelForm
     search_fields = ['estado', 'area']
     # exclude = ['estado', 'fecha_confirmado']

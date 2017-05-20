@@ -1,9 +1,160 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mesa Entrada</title>
+  <title>Mesa de entrada</title>
+  
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+  <link href="{% static 'css/mesaentrada.css' %}" rel="stylesheet" >
+  <script src="https://use.fontawesome.com/7ade6502bd.js"></script>
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/e6bb59fbdc.css"> -->
+ 
+
+
+  
+  
 </head>
 <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Sistema de Mesa Entrada v 0.1 </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Opciones</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Ayuda</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Entrada <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Salida</a></li>
+            <li><a href="#">Pendientes</a></li>
+            <li><a href="#">Exportar</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Informes</a></li>
+            <li><a href="">No se me ocurre otra cosa</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Bienvenido a su bandeja</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              </br>
+              <i class="fa fa-cc-paypal fa-spin fa-5x fa-fw"></i><span class="sr-only">Loading...</span>
+              <h4>Pagueme dinero</h4>
+              <span class="text-muted">La foto de nancy</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              </br>
+              <i class="fa fa-female fa-spin fa-5x fa-fw" aria-hidden="true"></i>              
+              <h4>Titulo 2</h4>
+              <span class="text-muted">La foto de balbastro</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              </br>
+              <i class="fa fa-gamepad fa-5x"></i><span class="sr-only">Loading...</span>
+              <h4>Otro titulo</h4>
+              <span class="text-muted">Compren un jostick</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              </br>
+              <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i><span class="sr-only">Loading...</span>
+              <h4>Ultimo titulo</h4>
+              <span class="text-muted">Loading</span>
+            </div>
+          </div>
+
+          <h2 class="sub-header">Notas entrantes</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Columna 1</th>
+                  <th>Columna 2</th>
+                  <th>Columna 3</th>
+                  <th>Columna 4</th>                
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+                <tr>
+                  <td>1,005</td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td>at</td>
+                </tr>
+                <tr>
+                  <td>1,006</td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td>Duis</td>
+                </tr>
+                <tr>
+                                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 </body>
 </html>

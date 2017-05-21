@@ -7,12 +7,7 @@
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
   <link href="{% static 'css/mesaentrada.css' %}" rel="stylesheet" >
   <script src="https://use.fontawesome.com/7ade6502bd.js"></script>
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/e6bb59fbdc.css"> -->
- 
-
-
-  
-  
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/e6bb59fbdc.css"> -->  
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -28,14 +23,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Inicio</a></li>
+            <li><a href="#">{{un_titulo}}</a></li>
             <li><a href="#">Opciones</a></li>
             <li><a href="#">Perfil</a></li>
             <li><a href="#">Ayuda</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
+      <!--     <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>
@@ -60,9 +55,9 @@
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
               </br>
-              <i class="fa fa-cc-paypal fa-spin fa-5x fa-fw"></i><span class="sr-only">Loading...</span>
-              <h4>Pagueme dinero</h4>
-              <span class="text-muted">La foto de nancy</span>
+              <i  class="fa fa-plus-circle fa-5x" aria-hidden="true"> </i> 
+              <span class="sr-only">Loading...</span>
+              <h4>Cargar nueva nota</h4>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               </br>
@@ -86,70 +81,34 @@
 
           <h2 class="sub-header">Notas entrantes</h2>
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-bordered">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Columna 1</th>
-                  <th>Columna 2</th>
-                  <th>Columna 3</th>
-                  <th>Columna 4</th>                
+                  <th>Nro de Nota</th>
+                  <th>Area</th>
+                  <th>Estado</th>
+                  <th>Fecha Alta</th>
+                  <th>Fecha Recibido</th>                
                 </tr>
               </thead>
+              
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                                
+                {% for p in notas %}
+                  <tr>
+                      <td>{{ p }}</td>
+                      <td>{{p.area}}</td>
+                      <td>{{p.estado}}</td>
+                      <td>{{p.fecha_recibido}}</td>
+                      {% if p.fecha_confirmado == None %} 
+                        <td>{{vacio}}</td>
+                      {% else %}
+                        <td>{{p.fecha_confirmado}}</td>
+                      {% endif %}                 
+                  </tr>                   
+                {% endfor %}          
               </tbody>
             </table>
+                      
           </div>
         </div>
       </div>
@@ -158,3 +117,5 @@
 
 </body>
 </html>
+
+

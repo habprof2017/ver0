@@ -8,6 +8,11 @@ body {
 }
 
 
+td, th {
+  text-align: center;
+
+}
+
 /*
  * Global add-ons
  */

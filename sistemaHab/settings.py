@@ -25,7 +25,7 @@ SECRET_KEY = '8o$z-b66ukz9grcojn%xm#c^ag-#9re5%u$2+&0!rr!1=1xd9y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['wwww.deptobrown.ml', 'deptobrown.ml', '127.0.0.1']
 
 
 # Application definition

@@ -6,4 +6,4 @@ from .models import Nota
 class NotaModelForm(forms.ModelForm):
     class Meta:
         model = Nota
-        fields = ['idficha', 'area', 'descripcion']
+        fields = ['idficha', 'area', 'personal' , 'descripcion']

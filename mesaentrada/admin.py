@@ -1,10 +1,10 @@
 from django.contrib import admin
 from .forms import NotaModelForm
-from .models import Nota, Area
+from .models import Nota, Area, PesonalColegio
 
 
 class AdminNota (admin.ModelAdmin):
-    list_display = ['id', 'area', 'estado',
+    list_display = ['id', 'area', 'personal' ,'estado',
                     'fecha_recibido', 'fecha_confirmado','descripcion']
     form = NotaModelForm
     search_fields = ['estado', 'area']
@@ -17,3 +17,4 @@ class AdminNota (admin.ModelAdmin):
 
 admin.site.register(Nota, AdminNota)
 admin.site.register(Area)
+admin.site.register(PesonalColegio)

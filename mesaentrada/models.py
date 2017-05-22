@@ -10,6 +10,16 @@ class Area(models.Model):
         return self.nombre
 
 
+class PesonalColegio(models.Model):
+    nombre = models.CharField(max_length=20)
+    fecha_alta = models.DateTimeField(auto_now_add=True, auto_now=False)
+    area = models.ForeignKey(
+        Area, null=False, blank=False,)
+
+    def __str__(self):
+        return self.nombre
+
+
 class Nota(models.Model):
     # los string se guardan en la BD
     RECIBIDA = 'Recibida'
@@ -24,6 +34,7 @@ class Nota(models.Model):
         (DERIVADA, 'Derivada'),
     )
 
+    personal = models.ForeignKey(PesonalColegio, null=True, blank=True, default=0) 
     idficha = models.ForeignKey(Ficha)
     area = models.ForeignKey(
         Area, null=False, blank=False,
